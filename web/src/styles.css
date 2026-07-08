@@ -1,0 +1,152 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --panel: #161b22;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --bid: #2ea04326;
+  --bid-text: #3fb950;
+  --ask: #f8514926;
+  --ask-text: #f85149;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 24px;
+  color: var(--muted);
+}
+
+.stats strong {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.status {
+  color: var(--muted);
+  text-align: center;
+  padding: 48px 0;
+}
+
+.banner {
+  padding: 8px 0;
+  color: var(--ask-text);
+}
+
+/* Dim the book while disconnected so stale data is visibly stale. */
+.stale {
+  opacity: 0.45;
+  transition: opacity 200ms linear;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.side-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Numbers keep a constant width, so updating values never shift layout. */
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+}
+
+.side-caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 10px 12px 0;
+}
+
+.caption-bids {
+  color: var(--bid-text);
+}
+
+.caption-asks {
+  color: var(--ask-text);
+}
+
+.side-table th {
+  text-align: right;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 10px 12px 6px;
+}
+
+.side-table td {
+  text-align: right;
+  padding: 4px 12px;
+}
+
+.depth-cell {
+  position: relative;
+}
+
+.depth-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  transition: width 120ms linear;
+}
+
+.depth-bids {
+  background: var(--bid);
+}
+
+/* Ask bars mirror from the right so the two sides read symmetrically. */
+.depth-asks {
+  background: var(--ask);
+  inset: 0 0 0 auto;
+}
+
+.price {
+  position: relative;
+}
+
+.price-bids {
+  color: var(--bid-text);
+}
+
+.price-asks {
+  color: var(--ask-text);
+}
+
+@media (max-width: 640px) {
+  .book {
+    grid-template-columns: 1fr;
+  }
+}

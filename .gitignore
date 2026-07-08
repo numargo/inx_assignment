@@ -141,3 +141,30 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+.claude/settings.local.json
+.env
+
+# Claude files (all)
+CLAUDE.md
+CLAUDE.local.md
+CLAUDE.*.md
+.claude/
+.serena/
+claude_docs/
+rules.md
+Republic_home_assignment.docx
+handoff.md
+memory.md
+docs
+# Playwright artifacts
+test-results/
+playwright-report/
+blob-report/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Defensive: never commit key material under any name
+*.pem
+*.key
+*BEGIN*KEY*

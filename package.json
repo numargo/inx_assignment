@@ -1,0 +1,26 @@
+{
+  "name": "inx-orderbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-time BTC/USD order book UI + backend for the INX API",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@11.10.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @inx-orderbook/server --filter @inx-orderbook/web run dev",
+    "build": "pnpm -r run build",
+    "lint": "eslint . && prettier --check .",
+    "fix": "eslint . --fix && prettier --write .",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm -r run test",
+    "coverage": "pnpm -r run coverage",
+    "e2e": "pnpm --filter @inx-orderbook/e2e run e2e"
+  },
+  "devDependencies": {
+    "gts": "^6.0.2",
+    "typescript": "^5.5.4"
+  }
+}

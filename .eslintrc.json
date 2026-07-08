@@ -1,0 +1,21 @@
+{
+  "extends": "./node_modules/gts/",
+  "ignorePatterns": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/coverage/**",
+    "**/playwright-report/**",
+    "**/test-results/**"
+  ],
+  "parserOptions": {
+    "project": [
+      "./server/tsconfig.eslint.json",
+      "./web/tsconfig.json",
+      "./e2e/tsconfig.json"
+    ]
+  },
+  "rules": {
+    "n/no-unpublished-import": "off",
+    "n/no-unpublished-require": "off"
+  }
+}

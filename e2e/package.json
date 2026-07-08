@@ -1,0 +1,21 @@
+{
+  "name": "@inx-orderbook/e2e",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "mock-inx": "tsx mock-inx-server.ts",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.0",
+    "@types/ws": "^8.5.12",
+    "tsx": "^4.19.0",
+    "ws": "^8.18.0"
+  }
+}
