@@ -124,9 +124,3 @@ messages are announced via `aria-live`.
   browser** — the UI talks exclusively to this backend.
 - All external input is schema-validated (zod) before use; HTTP error responses never
   echo internals; CORS is restricted to localhost dev origins.
-
-## Project docs
-
-`rules.md` (engineering rules), `docs/architecture.md` (approved design),
-`docs/plan.md` (implementation plan), `docs/tasks.md` (status tracking),
-`memory.md` / `handoff.md` (session continuity).
